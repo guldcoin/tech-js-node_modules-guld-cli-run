@@ -3,7 +3,7 @@
   "readme": "README.md",
   "author": "guld",
   "license": "MIT",
-  "description": "guld-cli-run by guld",
+  "description": "A contextual runner for commander based CLIs.",
   "version": "0.0.0",
   "engines": {
     "node": ">=7"
