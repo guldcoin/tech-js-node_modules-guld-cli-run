@@ -1,11 +1,11 @@
 module.exports = function (def, main) {
   if (process.argv.length <= 2) {
-    def = def || this.help.bind(this)
-    def()
+    def = def || this.help
+    def.bind(this)()
   } else if (process.argv.length > 2 &&
-    (process.argv[1] !== 'guld-sdk' &&
-      !(process.argv[1] === 'guld' && process.argv[2] === 'sdk'))) {
-    main = main || this.parse.bind(this)
-    main(process.argv)
+    (process.argv[1].endsWith(this._name) ||
+      (process.argv[1].endsWith(this._name.split('-')[0]) && process.argv[2].endsWith(this._name.split('-')[1])))) {
+    main = main || this.parse
+    main.bind(this)(process.argv)
   }
 }
