@@ -10,16 +10,16 @@ A contextual runner for commander based CLIs.
 
 ### Usage
 
-Run with the commander program, a default handler function and a success handler function. The default handler is run if the command is executed with no arguments. Otherwise, the success handler is run.
+Run with the commander program, a default handler function and a success handler function. The default handler is run if the command is executed with no arguments. Otherwise, the success handler is run. Bind `runCLI` to the program for best results.
 
 ```
-runCLI(program, program.help, program.parse)
+runCLI.bind(program)(program.help, program.parse)
 ```
 
 ##### node
 
 ```javascript
-require('guld-cli-run')
+var runCLI = require('guld-cli-run')
 ```
 
 ### License
